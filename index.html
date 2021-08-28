@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <head>
+        <title>Калькулятор</title>
+        <link rel="stylesheet" href="/CSS.css">
+    </head>
+    <style>
+        body{
+    user-select: none;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2px;
+    background-color:dimgray;
+    border-radius: 5px;
+    max-width: 300px;
+    padding: 4px;
+    height: 350px;
+}
+.item{
+    background-color: aqua;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+}
+form{
+    width: 98.5%;
+    height: 80;
+    padding-right: 1.25%;
+}
+.input{
+    height: 80px;
+    grid-column: 1/-1;
+    padding: 0;
+}
+input{
+    width: 100%;
+    height: 80px;
+    border: none;
+    font-size: 40px;
+    outline: none;
+    text-align: left;
+}
+.clean{
+    grid-column: 1/3;
+    background-color:orange
+}
+.back{
+    grid-column: 3/-1;
+    background-color: orangered;
+}
+.equal{
+    grid-row: 6/8;
+    grid-column: 4;
+    background-color: tomato;
+}
+.zero{
+    grid-column: 1/3;
+}
+    </style>
+    <body>
+        <div class="container">
+            <div class="item input">
+                <form name="form">
+                    <input type="text" name="symbol" readonly>
+                </form>
+            </div>
+            <div class="item clean" onclick="clean()">C</div>
+            <div class="item back" onclick="back()">&larr;</div>
+            <div class="item" onclick="insert('+')">+</div>
+            <div class="item" onclick="insert('-')">-</div>
+            <div class="item" onclick="insert('*')">&times;</div>
+            <div class="item" onclick="insert('/')">&divide;</div>
+            <div class="item" onclick="insert('7')">7</div>
+            <div class="item" onclick="insert('8')">8</div>
+            <div class="item" onclick="insert('9')">9</div>
+            <div class="item" onclick="insert('(')">(</div>
+            <div class="item" onclick="insert('4')">4</div>
+            <div class="item" onclick="insert('5')">5</div>
+            <div class="item" onclick="insert('6')">6</div>
+            <div class="item" onclick="insert(')')">)</div>
+            <div class="item" onclick="insert('1')">1</div>
+            <div class="item" onclick="insert('2')">2</div>
+            <div class="item" onclick="insert('3')">3</div>
+            <div class="item equal" onclick="equal()">=</div>
+            <div class="item zero" onclick="insert('0')">0</div>
+            <div class="item" onclick="insert('.')">.</div>
+        </div>
+        <script defer src="JS.js"></script>
+    </body>
+</html>
